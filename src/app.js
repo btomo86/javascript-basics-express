@@ -77,7 +77,7 @@ app.post('/numbers/divide', (req, res) => {
   if (req.body.a === 0) {
     res.status(200).json({ result: 0 });
   } else if (req.body.b === 0) {
-    res.status(400).json({ error: 'not divisable by 0.' });
+    res.status(400).json({ error: 'Unable to divide by 0.' });
   } else if (!req.body.a || !req.body.b) {
     res.status(400).send({ error: 'Parameters "a" and "b" are required.' });
   }
@@ -96,7 +96,7 @@ app.post('/numbers/remainder', (req, res) => {
   if (req.body.a === 0) {
     res.status(200).json({ result: 0 });
   } else if (req.body.b === 0) {
-    res.status(400).json({ error: 'not divisable by 0.' });
+    res.status(400).json({ error: 'Unable to divide by 0.' });
   } else if (!req.body.a || !req.body.b) {
     res.status(400).send({ error: 'Parameters "a" and "b" are required.' });
   }
@@ -109,6 +109,6 @@ app.post('/numbers/remainder', (req, res) => {
   } else {
     res.status(200).send({ result: remainder(a, b) });
   }
-
+});
 
 module.exports = app;
